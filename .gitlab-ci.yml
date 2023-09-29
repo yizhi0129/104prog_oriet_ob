@@ -1,4 +1,4 @@
-image: timbru31/node-chrome:fermium
+image: timbru31/node-chrome:latest
 export:
 
   script:
