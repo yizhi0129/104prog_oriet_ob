@@ -1,0 +1,26 @@
+image: timbru31/node-chrome:fermium
+export:
+
+  script:
+    - npm install -g @marp-team/marp-cli
+    - apt update
+    - apt-get install libxss1
+    - apt-get -y install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
+    - pandoc prerequis.md -o prerequis.pdf
+    - pandoc index.md -o index.pdf
+    - pandoc detailed_index.md -o detailed_index.pdf
+    - marp intro.md --pdf
+    
+
+
+    
+  
+  artifacts:
+    paths:
+      - prerequis.pdf
+      - index.pdf
+      - detailed_index.pdf
+      - intro.pdf
+    
+    untracked: false
+    expire_in: 30 days
