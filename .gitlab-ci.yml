@@ -10,6 +10,7 @@ export:
     - pandoc index.md -o index.pdf
     - pandoc detailed_index.md -o detailed_index.pdf
     - marp intro.md --pdf
+    - marp part1_survival_kit/part1_survival_kit-1_TooL.md --pdf
     
 
 
@@ -21,6 +22,7 @@ export:
       - index.pdf
       - detailed_index.pdf
       - intro.pdf
+      - part1_survival_kit/part1_survival_kit-1_TooL.pdf
     
     untracked: false
     expire_in: 30 days
