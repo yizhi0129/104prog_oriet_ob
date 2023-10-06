@@ -573,7 +573,8 @@ int main(){
   Parent p{42};
   p.print_parent(); // output : "Parent ; v = 42"
   std::cout << "parent value " << p.v << std::endl; // output : "parent value 42"
-  Son s{42};
+  Son s{};
+  s.set_value(42);
   s.print(); // output "The Child, Parent ; v =42"
   s.print_parent(); // output : "Parent ; v = 42"
   std::cout << s.v; // output : "42"
