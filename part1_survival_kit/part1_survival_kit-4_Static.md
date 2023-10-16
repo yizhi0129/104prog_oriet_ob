@@ -429,7 +429,7 @@ int main(){
   - lorsque l'objet `a` est créé, la **définition** et la **déclaration** de l'ensemble de la classe doivent être **visibles** : dans un `.h` inclus ou dans le même fichier
   - les template sont **déclarés et définis dans des fichiers `.h`**
   - Les template peuvent être définis dans un `.cpp` s'ils ne sont utilisés qu'**à l'intérieur de ce `.cpp`**.
-  - si l'on souhaite séparer définition et déclaration dans deux fichiers : faire deux `.h` et include la déclaration dans la définition
+  - si l'on souhaite séparer définition et déclaration dans deux fichiers : faire deux `.h` et inclure la déclaration dans la définition
 
 ---
 
