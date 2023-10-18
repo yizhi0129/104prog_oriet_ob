@@ -16,6 +16,7 @@ export:
     - marp part1_survival_kit/part1_survival_kit-2_OO.md --pdf
     - marp part1_survival_kit/part1_survival_kit-3_Mem.md --pdf
     - marp part1_survival_kit/part1_survival_kit-4_Static.md --pdf
+    - marp part2_deep_water/part2_deep_water-1_TooL.md --pdf
     
 
 
@@ -31,6 +32,7 @@ export:
       - part1_survival_kit/part1_survival_kit-2_OO.pdf
       - part1_survival_kit/part1_survival_kit-3_Mem.pdf
       - part1_survival_kit/part1_survival_kit-4_Static.pdf
+      - part2_deep_water/part2_deep_water-1_TooL.pdf
       - TDs/TD1_cmake.pdf
       - TDs/Help_install_gtest.pdf
     
