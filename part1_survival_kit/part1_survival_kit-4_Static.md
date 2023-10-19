@@ -181,7 +181,7 @@ L'ordre de stockage est la transposée de celui utilisé en Fortran.
 
 **Fonctions Template** 1/3
 
-- commençons par un exemple 
+- commençons par un exemple
 
 ```c++
 void f_int(int a) { std::cout << a << std::endl;}
@@ -207,6 +207,7 @@ int main(){
 # Item 12 : entrée dans l'univers des template
 
 **Fonctions Template** 2/3
+
 - Syntaxe  : on peut écrire indifféremment `typename` ou `class`
 
 ```c++
@@ -241,7 +242,7 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template**  1/12
+**Classes Template**  1/13
 
 - commençons par un exemple
 
@@ -266,7 +267,7 @@ public:
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 2/12
+**Classes Template** 2/13
 
 - commençons par un exemple : réécriture template
 
@@ -290,19 +291,19 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 3/12
+**Classes Template** 3/13
 un modèle de classe qui devient une classe à sa déclaration
 
 - les classe template peuvent contenir plusieurs paramètres template
 - les paramètres templates peuvent être des types ou des `int` ou des `bool`
-- les paramètres templates peuvent être partiellement spécialisés
+- les paramètres templates peuvent être (partiellement) spécialisés
 - la déclaration et la définition doivent être accessibles à l'instanciation de la classe
 
 ---
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 4/12
+**Classes Template** 4/13
 
 - les classe template peuvent contenir plusieurs paramètres template
 
@@ -325,7 +326,7 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 5/12
+**Classes Template** 5/13
 
 - les paramètres templates peuvent être des types ou des `int` ou des `bool`
 
@@ -347,9 +348,35 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 6/12
+**Classes Template** 6/13
 
-- les paramètres templates de la classe peuvent être partiellement spécialisés
+- les paramètres templates de la classe peuvent être (partiellement) spécialisés
+
+```c++
+template <typename T>
+class DataT {
+    T m_data = T{}; // default value of type T
+public:
+    void print();
+    void add(T a, U b);
+};
+// specialization 
+template <>
+class DataT<bool>{
+    T m_data = T{}; // default value of type T
+public:
+    void print();
+    // no add method
+}; 
+```
+
+---
+
+# Item 12 : entrée dans l'univers des template
+
+**Classes Template** 7/13
+
+- les paramètres templates de la classe peuvent être (partiellement) spécialisés
 
 ```c++
 template <typename T, typename U>
@@ -371,7 +398,7 @@ class Pair<int,U>{
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 7/12
+**Classes Template** 8/13
 
 - les méthodes de la classe peuvent être spécialisées (pas partiellement)
 
@@ -396,7 +423,7 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 8/12
+**Classes Template** 9/13
 
 - la déclaration et la définition doivent être accessibles à l'instanciation de la classe
 
@@ -423,19 +450,19 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 9/12
+**Classes Template** 10/13
 
 - la déclaration et la définition doivent être accessibles à l'instanciation de la classe
   - lorsque l'objet `a` est créé, la **définition** et la **déclaration** de l'ensemble de la classe doivent être **visibles** : dans un `.h` inclus ou dans le même fichier
   - les template sont **déclarés et définis dans des fichiers `.h`**
   - Les template peuvent être définis dans un `.cpp` s'ils ne sont utilisés qu'**à l'intérieur de ce `.cpp`**.
-  - si l'on souhaite séparer définition et déclaration dans deux fichiers : faire deux `.h` et inclure la déclaration dans la définition
+  - si l'on souhaite séparer définition et déclaration dans deux fichiers : faire deux `.h` et include la déclaration dans la définition
 
 ---
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 10/12
+**Classes Template** 11/13
 
 - la déclaration et la définition doivent être accessibles à l'instanciation de la classe
 
@@ -460,7 +487,7 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 11/12
+**Classes Template** 12/13
 
 - la déclaration et la définition doivent être accessibles à l'instanciation de la classe
 
@@ -487,7 +514,7 @@ int main(){
 
 # Item 12 : entrée dans l'univers des template
 
-**Classes Template** 12/12
+**Classes Template** 13/13
 
 - **Exo 12.2** faites fonctionner ce programme :
 
