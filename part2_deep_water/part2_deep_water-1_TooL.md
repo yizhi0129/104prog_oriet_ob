@@ -785,7 +785,7 @@ auto lambda2 = [&](){a++; b = false;};
 lambda2();
 ```
 
-**Exo 15.1** : Créez une $\lambda$-function qui retourne le double de l'entier pris en argument, ou pris par capture. Avec la capture, faite une version où l'argument capturé est modifé.
+**Exo 15.1** : Créez une $\lambda$-function qui retourne le double de l'entier pris en argument, ou pris par capture. Avec la capture, faite une version où l'argument capturé est modifié.
 
 ---
 
