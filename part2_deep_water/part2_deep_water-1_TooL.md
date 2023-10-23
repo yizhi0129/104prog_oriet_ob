@@ -578,6 +578,7 @@ cf. https://en.cppreference.com/w/cpp/header/algorithm
 # Item 14 : la bibliothèque standard 2 (algorithmes)
 
 Les **algorithmes** 2/3, quelques exemples; ne pas oublier `#include <algorithm>`
+
 ```c++
 std::vector<int> vec {0,1,1,2};
 int num_ones = std::count(vec.begin(),vec.end(),1);
@@ -650,7 +651,7 @@ Une syntaxe assez particulière mais très employée, introduite en C++11
 - On définit les arguments `()` le corps `{}` et une zone de capture `[]`
 
 ```c++
-auto lambda = []() {return "Hello lambda wolrd";};
+auto lambda = []() {return "Hello lambda world";};
 std::cout << lambda();
 ```
 
@@ -696,7 +697,7 @@ Une syntaxe assez particulière mais très employée, introduite en C++11
 - Le type de retour est déduit automatiquement, mais on peut le préciser
 
 ```c++
-auto lambda = []() -> std::string {return "Hello lambda wolrd";};
+auto lambda = []() -> std::string {return "Hello lambda world";};
 std::cout << lambda();
 
 ```
