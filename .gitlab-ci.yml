@@ -10,6 +10,8 @@ export:
     - pandoc index.md -o index.pdf
     - pandoc detailed_index.md -o detailed_index.pdf
     - pandoc TDs/TD1_cmake.md -o TDs/TD1_cmake.pdf
+    - pandoc TDs/TD2-5_intro.md -o TDs/TD2-5_intro.pdf
+    - pandoc TDs/TD2_simulator_architecture.md -o TDs/TD2_simulator_architecture.pdf
     - pandoc TDs/Help_install_gtest.md -o TDs/Help_install_gtest.pdf
     - marp intro.md --pdf
     - marp part1_survival_kit/part1_survival_kit-1_TooL.md --pdf
@@ -37,6 +39,8 @@ export:
       - part2_deep_water/part2_deep_water-2_Mem.pdf
       - TDs/TD1_cmake.pdf
       - TDs/Help_install_gtest.pdf
+      - TDs/TD2-5_intro.pdf
+      - TDs/TD2_simulator_architecture.pdf
     
     untracked: false
     expire_in: 30 days
