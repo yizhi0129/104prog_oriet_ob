@@ -16,13 +16,13 @@ Pour simplifier les développement, nous nous restreindrons à une résolution e
 Pour discrétiser cette équation, nous introduisons une grille 1-D de pas $\Delta x$, éventuellement variable, en espace, et une discrétisation uniforme, de pas $\Delta t$ en temps. Nous résolverons cette équation avec une méthode d'Euler en temps et deux schémas numériques en espace :
 
 - le schéma décentré amont :
-$$u^{n+1}_i = u^n_i-a\frac{\Delta t}{\Delta x} (u^n_i - u^n_{i-1})$$
+$$ u^{n+1}_i = u^n_i-a\frac{\Delta t}{\Delta x} (u^n_i - u^n_{i-1})$$
 - le schéma de Lax-Wendroff :
-$$u^{n+1}_i = u^n_i-a\frac{\Delta t}{2\Delta x} (u^n_{i+1} - u^n_{i-1}) + a^2 \frac{\Delta t^2}{2\Delta x^2}(u^n_{i+1}-2u^n_i+u^n_{i-1})$$
+$$ u^{n+1}_i = u^n_i-a\frac{\Delta t}{2\Delta x} (u^n_{i+1} - u^n_{i-1}) + a^2 \frac{\Delta t^2}{2\Delta x^2}(u^n_{i+1}-2u^n_i+u^n_{i-1})$$
 
 Ces schémas sont tous les deux d'ordre un en temps. Le schéma décentré amont est d'ordre un en espace ; celui de Lax-Wendroff d'ordre deux.
 Nous définissons le nombre CFL pour ces schémas :
-$$CFL = a\frac{\Delta t}{\Delta x}$$
+$$ CFL = a\frac{\Delta t}{\Delta x}$$
 Pour que ces schémas soient stables, il faut s'assurer que $CFL <=1$. Dans notre étude nous prendrons $CFL = 0.5$.
 
 ## Objectifs du TP
