@@ -101,7 +101,7 @@ TEST(MainFunctionTest,EquationTest){
 ...
 ```
 
-Pour le test de `Problem` vous pourrez tester le comportement de la classe si on lui fournit un pointeur nul pour le maillage. L'appel de `Problem::solve` ne devra pas planter. Vous pourrez de la même façon tester pour `Equation` le comportement lorsque la méthode `Equation::solve` est appelée avec un `IMesh*=nullptr` et faire en sorte que ce test passe.
+Pour le test de `Problem` vous pourrez tester le comportement de la classe si on lui fournit un pointeur nul pour le maillage. L'appel de `Problem::solve` ne devra pas planter. Vous pourrez de la même façon tester pour `Equation` le comportement lorsque la méthode `Equation::compute` est appelée avec un `IMesh*=nullptr` et faire en sorte que ce test passe.
 
 ## 2.5 Bonus : choix dynamique de la configuration de calcul
 
