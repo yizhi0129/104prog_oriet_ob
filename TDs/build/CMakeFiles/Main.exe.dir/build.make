@@ -92,6 +92,7 @@ Main_exe_EXTERNAL_OBJECTS =
 
 Main.exe: CMakeFiles/Main.exe.dir/main.cpp.o
 Main.exe: CMakeFiles/Main.exe.dir/build.make
+Main.exe: mylib_dir_TD1/libmylib.a
 Main.exe: CMakeFiles/Main.exe.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yyz/文档/chps2023/TDs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.exe.dir/link.txt --verbose=$(VERBOSE)

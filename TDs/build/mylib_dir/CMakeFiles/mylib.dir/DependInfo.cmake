@@ -8,12 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/yyz/文档/chps2023/TDs/main.cpp" "CMakeFiles/Main.exe.dir/main.cpp.o" "gcc" "CMakeFiles/Main.exe.dir/main.cpp.o.d"
+  "/home/yyz/文档/chps2023/TDs/mylib_dir/mylib.cpp" "mylib_dir/CMakeFiles/mylib.dir/mylib.cpp.o" "gcc" "mylib_dir/CMakeFiles/mylib.dir/mylib.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1/CMakeFiles/mylib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

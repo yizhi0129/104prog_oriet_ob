@@ -65,39 +65,39 @@ CMAKE_BINARY_DIR = /home/yyz/文档/chps2023/TDs/build
 # The main recursive "all" target.
 all: CMakeFiles/Main.exe.dir/all
 all: CMakeFiles/Test.exe.dir/all
-all: mylib_dir/all
+all: mylib_dir_TD1/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: mylib_dir/preinstall
+preinstall: mylib_dir_TD1/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Main.exe.dir/clean
 clean: CMakeFiles/Test.exe.dir/clean
-clean: mylib_dir/clean
+clean: mylib_dir_TD1/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory mylib_dir
+# Directory level rules for directory mylib_dir_TD1
 
 # Recursive "all" directory target.
-mylib_dir/all:
-.PHONY : mylib_dir/all
+mylib_dir_TD1/all: mylib_dir_TD1/CMakeFiles/mylib.dir/all
+.PHONY : mylib_dir_TD1/all
 
 # Recursive "preinstall" directory target.
-mylib_dir/preinstall:
-.PHONY : mylib_dir/preinstall
+mylib_dir_TD1/preinstall:
+.PHONY : mylib_dir_TD1/preinstall
 
 # Recursive "clean" directory target.
-mylib_dir/clean:
-.PHONY : mylib_dir/clean
+mylib_dir_TD1/clean: mylib_dir_TD1/CMakeFiles/mylib.dir/clean
+.PHONY : mylib_dir_TD1/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Main.exe.dir
 
 # All Build rule for target.
-CMakeFiles/Main.exe.dir/all:
+CMakeFiles/Main.exe.dir/all: mylib_dir_TD1/CMakeFiles/mylib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.exe.dir/build.make CMakeFiles/Main.exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.exe.dir/build.make CMakeFiles/Main.exe.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyz/文档/chps2023/TDs/build/CMakeFiles --progress-num=1,2 "Built target Main.exe"
@@ -105,7 +105,7 @@ CMakeFiles/Main.exe.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Main.exe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Main.exe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 0
 .PHONY : CMakeFiles/Main.exe.dir/rule
@@ -123,7 +123,7 @@ CMakeFiles/Main.exe.dir/clean:
 # Target rules for target CMakeFiles/Test.exe.dir
 
 # All Build rule for target.
-CMakeFiles/Test.exe.dir/all:
+CMakeFiles/Test.exe.dir/all: mylib_dir_TD1/CMakeFiles/mylib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyz/文档/chps2023/TDs/build/CMakeFiles --progress-num=3,4 "Built target Test.exe"
@@ -131,7 +131,7 @@ CMakeFiles/Test.exe.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Test.exe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Test.exe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 0
 .PHONY : CMakeFiles/Test.exe.dir/rule
@@ -144,6 +144,32 @@ Test.exe: CMakeFiles/Test.exe.dir/rule
 CMakeFiles/Test.exe.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/clean
 .PHONY : CMakeFiles/Test.exe.dir/clean
+
+#=============================================================================
+# Target rules for target mylib_dir_TD1/CMakeFiles/mylib.dir
+
+# All Build rule for target.
+mylib_dir_TD1/CMakeFiles/mylib.dir/all:
+	$(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/depend
+	$(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyz/文档/chps2023/TDs/build/CMakeFiles --progress-num=5,6 "Built target mylib"
+.PHONY : mylib_dir_TD1/CMakeFiles/mylib.dir/all
+
+# Build rule for subdir invocation for target.
+mylib_dir_TD1/CMakeFiles/mylib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD1/CMakeFiles/mylib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 0
+.PHONY : mylib_dir_TD1/CMakeFiles/mylib.dir/rule
+
+# Convenience name for target.
+mylib: mylib_dir_TD1/CMakeFiles/mylib.dir/rule
+.PHONY : mylib
+
+# clean rule for target.
+mylib_dir_TD1/CMakeFiles/mylib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/clean
+.PHONY : mylib_dir_TD1/CMakeFiles/mylib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

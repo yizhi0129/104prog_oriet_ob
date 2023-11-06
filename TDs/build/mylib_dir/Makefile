@@ -126,6 +126,44 @@ depend:
 	cd /home/yyz/文档/chps2023/TDs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+mylib_dir/CMakeFiles/mylib.dir/rule:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir/CMakeFiles/mylib.dir/rule
+.PHONY : mylib_dir/CMakeFiles/mylib.dir/rule
+
+# Convenience name for target.
+mylib: mylib_dir/CMakeFiles/mylib.dir/rule
+.PHONY : mylib
+
+# fast build rule for target.
+mylib/fast:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir/CMakeFiles/mylib.dir/build.make mylib_dir/CMakeFiles/mylib.dir/build
+.PHONY : mylib/fast
+
+mylib.o: mylib.cpp.o
+.PHONY : mylib.o
+
+# target to build an object file
+mylib.cpp.o:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir/CMakeFiles/mylib.dir/build.make mylib_dir/CMakeFiles/mylib.dir/mylib.cpp.o
+.PHONY : mylib.cpp.o
+
+mylib.i: mylib.cpp.i
+.PHONY : mylib.i
+
+# target to preprocess a source file
+mylib.cpp.i:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir/CMakeFiles/mylib.dir/build.make mylib_dir/CMakeFiles/mylib.dir/mylib.cpp.i
+.PHONY : mylib.cpp.i
+
+mylib.s: mylib.cpp.s
+.PHONY : mylib.s
+
+# target to generate assembly for a file
+mylib.cpp.s:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir/CMakeFiles/mylib.dir/build.make mylib_dir/CMakeFiles/mylib.dir/mylib.cpp.s
+.PHONY : mylib.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -135,6 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... mylib"
+	@echo "... mylib.o"
+	@echo "... mylib.i"
+	@echo "... mylib.s"
 .PHONY : help
 
 

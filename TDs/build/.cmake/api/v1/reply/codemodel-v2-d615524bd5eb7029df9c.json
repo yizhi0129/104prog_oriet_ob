@@ -24,15 +24,19 @@
 					]
 				},
 				{
-					"build" : "mylib_dir",
-					"jsonFile" : "directory-mylib_dir-Debug-3f71e76c28dba70e810a.json",
+					"build" : "mylib_dir_TD1",
+					"jsonFile" : "directory-mylib_dir_TD1-Debug-c0d34f020f736e0635bc.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
-					"source" : "mylib_dir"
+					"source" : "mylib_dir_TD1",
+					"targetIndexes" : 
+					[
+						2
+					]
 				}
 			],
 			"name" : "Debug",
@@ -48,7 +52,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -57,15 +62,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Main.exe::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Main.exe-Debug-fcad7930067cdb9bd2f6.json",
+					"jsonFile" : "target-Main.exe-Debug-ee4f655b9c77e4c2f6c8.json",
 					"name" : "Main.exe",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Test.exe::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Test.exe-Debug-2ab0ce20a870cfc8fad2.json",
+					"jsonFile" : "target-Test.exe-Debug-25d145dd25f5435b1907.json",
 					"name" : "Test.exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "mylib::@ca42239461999a6bad77",
+					"jsonFile" : "target-mylib-Debug-e4a9309859833a4b28fd.json",
+					"name" : "mylib",
 					"projectIndex" : 0
 				}
 			]

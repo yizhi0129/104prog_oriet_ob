@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/Test.exe.dir/test.cpp.o -o Test.exe  -Wl,-rpath,/home/yyz/miniconda3/lib -lmylib /home/yyz/miniconda3/lib/libgtest_main.so /home/yyz/miniconda3/lib/libgtest.so 
+/usr/bin/g++ -g CMakeFiles/Test.exe.dir/test.cpp.o -o Test.exe  -Wl,-rpath,/home/yyz/miniconda3/lib mylib_dir_TD1/libmylib.a /home/yyz/miniconda3/lib/libgtest_main.so /home/yyz/miniconda3/lib/libgtest.so 
