@@ -1,12 +1,17 @@
 [
 {
   "directory": "/home/yyz/文档/chps2023/TDs/build",
-  "command": "/usr/bin/g++  -I/home/yyz/文档/chps2023/TDs/mylib_dir -g -o CMakeFiles/Main.exe.dir/main.cpp.o -c /home/yyz/文档/chps2023/TDs/main.cpp",
+  "command": "/usr/bin/g++  -I/home/yyz/文档/chps2023/TDs/mylib_dir_TD1 -g -o CMakeFiles/Main.exe.dir/main.cpp.o -c /home/yyz/文档/chps2023/TDs/main.cpp",
   "file": "/home/yyz/文档/chps2023/TDs/main.cpp"
 },
 {
   "directory": "/home/yyz/文档/chps2023/TDs/build",
-  "command": "/usr/bin/g++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/yyz/文档/chps2023/TDs/mylib_dir -isystem /home/yyz/miniconda3/include -g -o CMakeFiles/Test.exe.dir/test.cpp.o -c /home/yyz/文档/chps2023/TDs/test.cpp",
+  "command": "/usr/bin/g++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/yyz/文档/chps2023/TDs/mylib_dir_TD1 -isystem /home/yyz/miniconda3/include -g -o CMakeFiles/Test.exe.dir/test.cpp.o -c /home/yyz/文档/chps2023/TDs/test.cpp",
   "file": "/home/yyz/文档/chps2023/TDs/test.cpp"
+},
+{
+  "directory": "/home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/mylib.dir/mylib.cpp.o -c /home/yyz/文档/chps2023/TDs/mylib_dir_TD1/mylib.cpp",
+  "file": "/home/yyz/文档/chps2023/TDs/mylib_dir_TD1/mylib.cpp"
 }
 ]

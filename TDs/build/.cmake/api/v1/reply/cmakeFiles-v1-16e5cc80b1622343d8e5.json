@@ -198,7 +198,7 @@
 			"path" : "/home/yyz/miniconda3/lib/cmake/GTest/GTestTargets-release.cmake"
 		},
 		{
-			"path" : "mylib_dir/CMakeLists.txt"
+			"path" : "mylib_dir_TD1/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",
