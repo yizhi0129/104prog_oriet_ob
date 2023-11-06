@@ -1,0 +1,19 @@
+Start testing: Nov 06 12:26 CET
+----------------------------------------------------------
+1/1 Testing: Test.cpp
+1/1 Test: Test.cpp
+Command: "/home/yyz/文档/chps2023/TDs/build/Main.exe"
+Directory: /home/yyz/文档/chps2023/TDs/build
+"Test.cpp" start time: Nov 06 12:26 CET
+Output:
+----------------------------------------------------------
+this is my class
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Test.cpp" end time: Nov 06 12:26 CET
+"Test.cpp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 06 12:26 CET
