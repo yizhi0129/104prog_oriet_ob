@@ -8,7 +8,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "mylib_dir",
-		"source" : "mylib_dir"
+		"build" : "mylib_dir_TD1",
+		"source" : "mylib_dir_TD1"
 	}
 }

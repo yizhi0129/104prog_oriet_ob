@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles /home/yyz/文档/chps2023/TDs/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/yyz/文档/chps2023/TDs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles /home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1//CMakeFiles/progress.marks
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD1/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyz/文档/chps2023/TDs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD1/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,105 +113,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD1/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD1/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yyz/文档/chps2023/TDs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Main.exe
+# Convenience name for target.
+mylib_dir_TD1/CMakeFiles/mylib.dir/rule:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD1/CMakeFiles/mylib.dir/rule
+.PHONY : mylib_dir_TD1/CMakeFiles/mylib.dir/rule
 
-# Build rule for target.
-Main.exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Main.exe
-.PHONY : Main.exe
-
-# fast build rule for target.
-Main.exe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.exe.dir/build.make CMakeFiles/Main.exe.dir/build
-.PHONY : Main.exe/fast
-
-#=============================================================================
-# Target rules for targets named Test.exe
-
-# Build rule for target.
-Test.exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test.exe
-.PHONY : Test.exe
-
-# fast build rule for target.
-Test.exe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/build
-.PHONY : Test.exe/fast
-
-#=============================================================================
-# Target rules for targets named mylib
-
-# Build rule for target.
-mylib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib
+# Convenience name for target.
+mylib: mylib_dir_TD1/CMakeFiles/mylib.dir/rule
 .PHONY : mylib
 
 # fast build rule for target.
 mylib/fast:
-	$(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/build
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+mylib.o: mylib.cpp.o
+.PHONY : mylib.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.exe.dir/build.make CMakeFiles/Main.exe.dir/main.cpp.o
-.PHONY : main.cpp.o
+mylib.cpp.o:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/mylib.cpp.o
+.PHONY : mylib.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.exe.dir/build.make CMakeFiles/Main.exe.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.exe.dir/build.make CMakeFiles/Main.exe.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-test.o: test.cpp.o
-.PHONY : test.o
-
-# target to build an object file
-test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/test.cpp.o
-.PHONY : test.cpp.o
-
-test.i: test.cpp.i
-.PHONY : test.i
+mylib.i: mylib.cpp.i
+.PHONY : mylib.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/test.cpp.i
-.PHONY : test.cpp.i
+mylib.cpp.i:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/mylib.cpp.i
+.PHONY : mylib.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+mylib.s: mylib.cpp.s
+.PHONY : mylib.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.exe.dir/build.make CMakeFiles/Test.exe.dir/test.cpp.s
-.PHONY : test.cpp.s
+mylib.cpp.s:
+	cd /home/yyz/文档/chps2023/TDs/build && $(MAKE) $(MAKESILENT) -f mylib_dir_TD1/CMakeFiles/mylib.dir/build.make mylib_dir_TD1/CMakeFiles/mylib.dir/mylib.cpp.s
+.PHONY : mylib.cpp.s
 
 # Help Target
 help:
@@ -222,15 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... Main.exe"
-	@echo "... Test.exe"
 	@echo "... mylib"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... mylib.o"
+	@echo "... mylib.i"
+	@echo "... mylib.s"
 .PHONY : help
 
 
@@ -242,6 +188,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yyz/文档/chps2023/TDs/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

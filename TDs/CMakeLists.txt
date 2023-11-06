@@ -14,17 +14,17 @@ add_executable(Test.exe test.cpp)
 
 
 # add library
-add_subdirectory(mylib_dir)
+add_subdirectory(mylib_dir_TD1)
  
 
 target_link_libraries(Main.exe PUBLIC mylib)
-target_include_directories(Main.exe PUBLIC mylib_dir)
+target_include_directories(Main.exe PUBLIC mylib_dir_TD1)
 
 
 target_link_libraries(Test.exe PUBLIC GTest::GTest)
 target_link_libraries(Test.exe PUBLIC GTest::Main)
 target_link_libraries(Test.exe PUBLIC mylib)
-target_include_directories(Test.exe PUBLIC mylib_dir)
+target_include_directories(Test.exe PUBLIC mylib_dir_TD1)
 
 
 enable_testing()
