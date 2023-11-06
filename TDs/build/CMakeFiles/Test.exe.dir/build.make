@@ -92,6 +92,7 @@ Test_exe_EXTERNAL_OBJECTS =
 
 Test.exe: CMakeFiles/Test.exe.dir/test.cpp.o
 Test.exe: CMakeFiles/Test.exe.dir/build.make
+Test.exe: mylib_dir_TD1/libmylib.a
 Test.exe: /home/yyz/miniconda3/lib/libgtest_main.so
 Test.exe: /home/yyz/miniconda3/lib/libgtest.so
 Test.exe: CMakeFiles/Test.exe.dir/link.txt
