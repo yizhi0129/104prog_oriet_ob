@@ -1,0 +1,3 @@
+/home/yyz/文档/chps2023/TDs/CMakeFiles/Main.exe.dir
+/home/yyz/文档/chps2023/TDs/CMakeFiles/edit_cache.dir
+/home/yyz/文档/chps2023/TDs/CMakeFiles/rebuild_cache.dir
