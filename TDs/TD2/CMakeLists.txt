@@ -16,3 +16,7 @@ add_executable(my_executable/Unif_mesh.exe unif_mesh.cpp)
 
 target_include_directories(Main.exe PRIVATE chps2023/TDs/TD2/my_executable)
 
+
+enable_testing()
+
+add_test()
