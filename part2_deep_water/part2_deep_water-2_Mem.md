@@ -228,7 +228,7 @@ Peut-on "voler" la mémoire d'une *lvalue* ?
 
 **Exo 16.1** construisez un tableau et "voler" sa mémoire dans un autre tableau. Vérifier que ce premier tableau n'a plus de mémoire.
 
-**Exo 16.2** créez une fonction qui prend un vecteur par référence de *rvalue* et qui l'affiche à la console. Appelez-la dans un `main`, à partir d'une *rvalue* et à partir d'une *lvalue*.
+**Exo 16.2** créez une fonction qui prend un vecteur par référence de *rvalue* et qui l'affiche à la console. Appelez-la dans un `main`, à partir d'une *rvalue* et voyez ce qui se passe lorsque vous l'appelez à partir d'une *lvalue*.
 
 **Exo 16.3** reprenez l'exo 16.2 et construisez dans votre fonction un vecteur à partir de votre référence de *rvalue*. Attention il ne devra pas y avoir de copie.
 
@@ -253,6 +253,30 @@ Sont maintenant automatiquement ajouteés les opérations de *move*
 
 ```c++
 A(A&& a) {m_i = std::move(a.i);} // move constructor
+A& operator= (A&& a) {m_i = std::move(a.i);} // move assignment
+```
+
+---
+
+# Item 16 : copier sans copier
+
+Les fonctions implicites des classes sont enrichies avec des `&&`
+Rappelez-vous l'*item 10*
+
+```c++
+struct A{ // ce que vous ne voyez pas
+   A() {}; // constructor
+  ~A() {}; // destructor
+   A(A const& a) {m_i = a.i;} // copy constructor
+   A& operator= (A const& a) {m_i = a.i;} // copy assignment
+   int m_i = 0;
+}; // move operators kept under silence for the moment
+```
+
+Sont maintenant automatiquement ajouteés les opérations de *move*
+
+```c++
+A(A&& a) : m_i{std::move(a.i)} {} // move constructor
 A& operator= (A&& a) {m_i = std::move(a.i);} // move assignment
 ```
 
@@ -444,7 +468,7 @@ auto my_deleter = [](PointedObject* ptr)
                     delete ptr;
                   }
 
-using unique_ptr_with_del = std::unique_ptr<PointedObject, decltype(my_delete)>;
+using unique_ptr_with_del = std::unique_ptr<PointedObject, decltype(my_deleter)>;
 unique_ptr_with_del u_ptr(new PointedObject{},my_deleter);
 }
 ```
@@ -465,7 +489,7 @@ auto my_deleter = [](PointedObject* ptr)
                   {
                     std::cout << "Delete PointedObject";
                     delete ptr;
-                  }
+                  };
 
 std::shared_ptr<PointedObject> s_ptr(new PointedObject{},my_deleter);
 ```
