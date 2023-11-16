@@ -21,7 +21,7 @@ Dans un deuxième temps, nous pourrons rendre le code plus générique, nous pou
 
 Pour la discrétisation en espace, vous créerez une classe `Variable` qui vous permettra de stocker et d'accéder au tableau des valeurs de $u_i$. Vous utiliserez par exemple un `std::vector` pour stocker les valeurs dans cette classe. Cette classe nous permettra d'accéder à $u_i$ à partir de l'index $i$ : $u_i = variable[i]$. Cette classe aura besoin de stocker un pointeur vers `IMesh`.
 
-- Le `std::vector` doit être dimensionné et initialisé dans le constructeur de `Variable`. Pour connaître la taille du maillage en $x$, vous ajouterez une méthode `ITimeDiscretization::x_size()`.
+- Le `std::vector` doit être dimensionné et initialisé dans le constructeur de `Variable`. Pour connaître la taille du maillage en $x$, vous ajouterez une méthode `IMesh::x_size()`.
 - Afin de pouvoir écrire `u_i = variable[i]`, vous créerez un `operator[]` dans la classe qui prendra en argument l'index $i$ et  vous retournera une référence vers le $i^{ème}$ élément du tableau.
 
 Pour la discrétisation en temps, nous n'avons besoin que de stocker les instants $n$ et $n+1$, nous créerons pour cela deux variables `u_n` et `u_np1` ; `u_np1` étant recopié dans `u_n` en fin d'itération. Dans la méthode `solve` de votre `Problem`, vous instancierez ces deux variables `u_n` et `u_np1`, instances de la classe `Variable`.
