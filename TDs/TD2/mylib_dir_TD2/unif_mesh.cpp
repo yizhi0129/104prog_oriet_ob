@@ -32,3 +32,5 @@ double UniformMesh::getSpaceStep() const
 {
     return dx_;
 }
+#include "unif_mesh.h"
+#include <iostream>
