@@ -1,7 +1,7 @@
-#include "mylib_dir_TD2/problem.h"
-#include "mylib_dir_TD2/unif_mesh.h"
-#include "mylib_dir_TD2/imesh.h"
-#include "mylib_dir_TD2/equation.h"
+#include "problem.h"
+#include "unif_mesh.h"
+#include "imesh.h"
+#include "equation.h"
 
 #include <iostream>
 
