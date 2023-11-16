@@ -1,4 +1,4 @@
-# TD 2 à 4 Prévoir la pollution atmosphérique : résolution d'équations différentielles ordinaires
+# TD 2 à 5 simulation équation de transport : résolution d'équation d'advection linéaire
 
 Contexte et objectifs du TD : voir [Intro TD simulation équation d'advection](TD2-5_intro.md)
 
