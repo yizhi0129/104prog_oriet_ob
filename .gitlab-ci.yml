@@ -12,6 +12,7 @@ export:
     - pandoc TDs/TD1_cmake.md -o TDs/TD1_cmake.pdf
     - pandoc TDs/TD2-5_intro.md -o TDs/TD2-5_intro.pdf
     - pandoc TDs/TD2_simulator_architecture.md -o TDs/TD2_simulator_architecture.pdf
+    - pandoc TDs/TD3_equation_and_numerical_scheme.md -o TD3_equation_and_numerical_scheme.pdf
     - pandoc TDs/Help_install_gtest.md -o TDs/Help_install_gtest.pdf
     - marp intro.md --pdf
     - marp part1_survival_kit/part1_survival_kit-1_TooL.md --pdf
@@ -45,6 +46,7 @@ export:
       - TDs/Help_install_gtest.pdf
       - TDs/TD2-5_intro.pdf
       - TDs/TD2_simulator_architecture.pdf
+      - TDs/TD3_equation_and_numerical_scheme.pdf
     
     untracked: false
     expire_in: 30 days
