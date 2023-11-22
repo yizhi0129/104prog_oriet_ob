@@ -36,14 +36,14 @@ Afin de valider les résultats plus précisément, nous allons maintenant faire 
 - `dx` = 0.1
 
 L'objectif est maintenant de tracer sur une même courbe l'évolution de votre solution `u_n` et celle de la solution exacte `u_ref`. Vous exporterez dans un fichier la condition initiale (`u_n` au temps 0) ainsi que `u_n` et `u_ref` au temps final. Vous tracerez, avec gnuplot par exemple, la courbe d'évolution de ces deux variables en fonction du temps, pour obtenir une figure du type de celle ci-dessous:
-![solution ordre 1](FirstOrderUpwind.PNG)
+![solution ordre 1](FirstOrderUpwind.png)
 
 ## 4.4 Bonus
 
 ### 4.4.1 Comparaison entre l'ordre 1 et l'ordre 2
 
 Si vous avez ajouté le schéma de Lax-Wendroff (bonus du TD3), vous allez maintenant pouvoir l'ajouter à la courbe pour voir l'apport de l'ordre 2 en espace sur la précision des résultats. Vous calculerez dans deux nouvelles variables `u_n_2nd_order` et `u_np1_2nd_order` la solution pour ce nouveau schéma et vous l'exporterez dans un fichier en fin de calcul afin de pouvoir l'ajouter à la courbe de comparaison. Vous devriez obtenir une figure de ce type :
-![solution ordre 1](SecondOrderLaxWendroff.PNG)
+![solution ordre 1](SecondOrderLaxWendroff.png)
 
 où nous voyons que l'ordre 2 offre une meilleure précision que l'ordre 1.
 
