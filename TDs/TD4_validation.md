@@ -20,7 +20,7 @@ la condition initiale étant simplement translatée à vitesse constante. La con
 ## 4.2 Validation : affichage des résultats
 
 Tout d'abord afin de pouvoir vous y retrouver lors de l'affichage des variables, vous ajouterez un champ `m_name` dans la classe `Variable`.
-Ajoutez à votre classe `Variable` une méthode `print` qui vous permette d'afficher à l'écran les valeurs de votre variable ainsi que son nom. Vous appellerez cette méthode à la fin de chaque itération de `Problem::solve` pour les variables `u_np1` et `u_ref`. Les valeurs de `u_np1` et `u_ref` doivent correspondre.
+Ajoutez à votre classe `Variable` une méthode `print` qui vous permette d'afficher à l'écran les valeurs de votre variable ainsi que son nom. Vous appellerez cette méthode à la fin de chaque itération de `Problem::solve` pour les variables `u_np1` et `u_ref`. Les valeurs de `u_np1` et `u_ref` doivent être du même ordre de grandeur.
 
 Afin de pouvoir tracer votre solution et la solution exacte sur un graphique (avec gnuplot par exemple), vous ajouterez dans la méthode `print` un export dans un fichier, en utilisant par exemple un `std::ofstream`. La méthode `print` prendra maintenant un entier en argument afin de pouvoir indexer le fichier par le numéro de l'itération. Vous devez créer des fichiers avec le nom : 'Variable_u_np1_0.data', 'Variable_u_np1_1.data'...
 
