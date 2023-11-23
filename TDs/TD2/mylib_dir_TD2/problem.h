@@ -9,7 +9,7 @@ class Problem
 public:
     Problem(const Equation& eq, IMesh* mesh);
     void solve();
-    
+    ~Problem() = default; 
 private:
     Equation equation_;
     IMesh* mesh_;
