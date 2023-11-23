@@ -1,6 +1,5 @@
 set(SOURCE_FILES 
     equation.cpp 
-    imesh.cpp 
     unif_mesh.cpp 
     problem.cpp
 )
