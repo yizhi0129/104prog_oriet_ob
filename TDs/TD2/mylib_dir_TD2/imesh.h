@@ -4,12 +4,12 @@
 class IMesh 
 {
 public:
-    virtual double getInitialTime() const = 0;
-    virtual double getFinalTime() const = 0;
-    virtual double getTimeStep() const = 0;
-    virtual double getInitialPosition() const = 0;
-    virtual double getFinalPosition() const = 0;
-    virtual double getSpaceStep() const = 0;
+    virtual double initial_time() const = 0;
+    virtual double final_time() const = 0;
+    virtual double time_step() const = 0;
+    virtual double initial_position() const = 0;
+    virtual double final_position() const = 0;
+    virtual double position_step() const = 0;
 };
 
 #endif
