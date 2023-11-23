@@ -1,14 +1,12 @@
-#infndef VARIABLE_H
+#ifndef VARIABLE_H
 #define VARIABLE_H
 
-#include "imesh.h"
+#include "mylib_dir_TD2/imesh.h"
 
 class Variable
 {
     public:
-}
-
-
+};
 
 
 #endif
