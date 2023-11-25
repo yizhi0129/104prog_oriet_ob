@@ -164,30 +164,6 @@ equation.cpp.s:
 	cd /Users/yangyizhi/chps2023/TDs/TD2 && $(MAKE) $(MAKESILENT) -f mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build.make mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/equation.cpp.s
 .PHONY : equation.cpp.s
 
-imesh.o: imesh.cpp.o
-.PHONY : imesh.o
-
-# target to build an object file
-imesh.cpp.o:
-	cd /Users/yangyizhi/chps2023/TDs/TD2 && $(MAKE) $(MAKESILENT) -f mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build.make mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/imesh.cpp.o
-.PHONY : imesh.cpp.o
-
-imesh.i: imesh.cpp.i
-.PHONY : imesh.i
-
-# target to preprocess a source file
-imesh.cpp.i:
-	cd /Users/yangyizhi/chps2023/TDs/TD2 && $(MAKE) $(MAKESILENT) -f mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build.make mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/imesh.cpp.i
-.PHONY : imesh.cpp.i
-
-imesh.s: imesh.cpp.s
-.PHONY : imesh.s
-
-# target to generate assembly for a file
-imesh.cpp.s:
-	cd /Users/yangyizhi/chps2023/TDs/TD2 && $(MAKE) $(MAKESILENT) -f mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build.make mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/imesh.cpp.s
-.PHONY : imesh.cpp.s
-
 problem.o: problem.cpp.o
 .PHONY : problem.o
 
@@ -249,9 +225,6 @@ help:
 	@echo "... equation.o"
 	@echo "... equation.i"
 	@echo "... equation.s"
-	@echo "... imesh.o"
-	@echo "... imesh.i"
-	@echo "... imesh.s"
 	@echo "... problem.o"
 	@echo "... problem.i"
 	@echo "... problem.s"

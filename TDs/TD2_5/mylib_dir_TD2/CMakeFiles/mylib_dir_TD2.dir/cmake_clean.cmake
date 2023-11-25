@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mylib_dir_TD2.dir/equation.cpp.o"
   "CMakeFiles/mylib_dir_TD2.dir/equation.cpp.o.d"
-  "CMakeFiles/mylib_dir_TD2.dir/imesh.cpp.o"
-  "CMakeFiles/mylib_dir_TD2.dir/imesh.cpp.o.d"
   "CMakeFiles/mylib_dir_TD2.dir/problem.cpp.o"
   "CMakeFiles/mylib_dir_TD2.dir/problem.cpp.o.d"
   "CMakeFiles/mylib_dir_TD2.dir/unif_mesh.cpp.o"
