@@ -18,7 +18,7 @@ target_link_libraries(Main.exe PUBLIC mylib)
 target_include_directories(Main.exe PUBLIC mylib_dir_TD2)
 
 
-target_include_directories(Main.exe PRIVATE chps2023/TDs/TD2)
+target_include_directories(Main.exe PRIVATE chps2023/TDs/TD2_5)
 
 # add tests
 enable_testing()

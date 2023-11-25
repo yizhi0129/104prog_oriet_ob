@@ -124,12 +124,12 @@ CMakeFiles/Main.exe.dir/clean:
 mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/all:
 	$(MAKE) $(MAKESILENT) -f mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build.make mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/depend
 	$(MAKE) $(MAKESILENT) -f mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build.make mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles --progress-num=3,4,5,6,7 "Built target mylib_dir_TD2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles --progress-num=3,4,5,6 "Built target mylib_dir_TD2"
 .PHONY : mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/all
 
 # Build rule for subdir invocation for target.
 mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles 0
 .PHONY : mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir/rule
