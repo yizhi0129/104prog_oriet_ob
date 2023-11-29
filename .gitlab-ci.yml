@@ -23,6 +23,7 @@ export:
     - marp part2_deep_water/part2_deep_water-1_TooL.md --pdf
     - marp part2_deep_water/part2_deep_water-2_Mem.md --pdf   
     - marp part2_deep_water/part2_deep_water-3_OO.md --pdf
+    - marp part2_deep_water/part2_deep_water-4_Static.md --pdf
  
     
 
@@ -42,6 +43,7 @@ export:
       - part2_deep_water/part2_deep_water-1_TooL.pdf
       - part2_deep_water/part2_deep_water-2_Mem.pdf
       - part2_deep_water/part2_deep_water-3_OO.pdf
+      - part2_deep_water/part2_deep_water-4_Static.pdf
 
       - TDs/TD1_cmake.pdf
       - TDs/Help_install_gtest.pdf
