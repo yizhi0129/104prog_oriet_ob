@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libmylib_dir_TD2.a CMakeFiles/mylib_dir_TD2.dir/equation.cpp.o CMakeFiles/mylib_dir_TD2.dir/unif_mesh.cpp.o CMakeFiles/mylib_dir_TD2.dir/problem.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libmylib_dir_TD2.a
