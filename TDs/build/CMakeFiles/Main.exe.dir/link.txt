@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Main.exe.dir/main.cpp.o -o Main.exe  mylib_dir_TD1/libmylib.a 

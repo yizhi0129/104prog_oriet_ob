@@ -1,0 +1,9 @@
+/home/yyz/文档/chps2023/TDs/build/CMakeFiles/Main.exe.dir
+/home/yyz/文档/chps2023/TDs/build/CMakeFiles/Test.exe.dir
+/home/yyz/文档/chps2023/TDs/build/CMakeFiles/test.dir
+/home/yyz/文档/chps2023/TDs/build/CMakeFiles/edit_cache.dir
+/home/yyz/文档/chps2023/TDs/build/CMakeFiles/rebuild_cache.dir
+/home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1/CMakeFiles/mylib.dir
+/home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1/CMakeFiles/test.dir
+/home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1/CMakeFiles/edit_cache.dir
+/home/yyz/文档/chps2023/TDs/build/mylib_dir_TD1/CMakeFiles/rebuild_cache.dir
