@@ -1,8 +1,0 @@
-/Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles/Main.exe.dir
-/Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles/test.dir
-/Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles/edit_cache.dir
-/Users/yangyizhi/chps2023/TDs/TD2/CMakeFiles/rebuild_cache.dir
-/Users/yangyizhi/chps2023/TDs/TD2/mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir
-/Users/yangyizhi/chps2023/TDs/TD2/mylib_dir_TD2/CMakeFiles/test.dir
-/Users/yangyizhi/chps2023/TDs/TD2/mylib_dir_TD2/CMakeFiles/edit_cache.dir
-/Users/yangyizhi/chps2023/TDs/TD2/mylib_dir_TD2/CMakeFiles/rebuild_cache.dir

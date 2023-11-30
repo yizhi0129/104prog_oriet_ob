@@ -1,13 +1,6 @@
 #include "unif_mesh.h"
 #include <iostream>
 
-double t_ini = 0.0f;
-double t_final = 1.0f;
-double dt = 0.5f;
-double x_min = 0.0f;
-double x_max = 5.0f;
-double dx = 2.0f;
-
 double UniformMesh::initial_time() const
 {
     return t_ini;
@@ -46,4 +39,9 @@ UniformMesh::UniformMesh(double t_ini, double t_final, double dt, double x_min, 
     this->x_min = x_min;
     this->x_max = x_max;
     this->dx = dx;
+};
+
+int UniformMesh::x_size() const
+{
+    return (final_position() - initial_position()) / position_step() + 1;
 };

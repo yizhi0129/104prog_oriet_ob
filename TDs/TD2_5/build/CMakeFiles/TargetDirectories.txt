@@ -1,0 +1,8 @@
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/CMakeFiles/Main.exe.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/CMakeFiles/test.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/CMakeFiles/edit_cache.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/CMakeFiles/rebuild_cache.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/mylib_dir_TD2/CMakeFiles/mylib_dir_TD2.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/mylib_dir_TD2/CMakeFiles/test.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/mylib_dir_TD2/CMakeFiles/edit_cache.dir
+/Users/Marvin/Documents/UNI/S11/104prog_oriet_ob/TDs/TD2_5/build/mylib_dir_TD2/CMakeFiles/rebuild_cache.dir
