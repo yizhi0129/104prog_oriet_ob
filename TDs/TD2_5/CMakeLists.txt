@@ -14,7 +14,7 @@ add_executable(Main.exe main.cpp)
 add_subdirectory(mylib_dir_TD2)
  
 
-target_link_libraries(Main.exe PUBLIC mylib)
+target_link_libraries(Main.exe PUBLIC mylib_dir_TD2)
 target_include_directories(Main.exe PUBLIC mylib_dir_TD2)
 
 

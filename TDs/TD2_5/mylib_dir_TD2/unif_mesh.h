@@ -22,6 +22,9 @@ public:
     double initial_position() const override;
     double final_position() const override;
     double position_step() const override;
+
+    int x_size() const override;
+    // ~UniformMesh() = default;
 };
 
 #endif
