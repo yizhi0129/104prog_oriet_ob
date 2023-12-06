@@ -14,6 +14,7 @@ export:
     - pandoc TDs/TD2_simulator_architecture.md -o TDs/TD2_simulator_architecture.pdf
     - pandoc TDs/TD3_equation_and_numerical_scheme.md -o TDs/TD3_equation_and_numerical_scheme.pdf
     - pandoc TDs/TD4_validation.md -o TDs/TD4_validation.pdf
+    - pandoc TDs/TD5_performance.md -o TDs/TD5_performance.pdf
     - pandoc TDs/Help_install_gtest.md -o TDs/Help_install_gtest.pdf
     - marp intro.md --pdf
     - marp part1_survival_kit/part1_survival_kit-1_TooL.md --pdf
@@ -51,6 +52,7 @@ export:
       - TDs/TD2_simulator_architecture.pdf
       - TDs/TD3_equation_and_numerical_scheme.pdf
       - TDs/TD4_validation.pdf
+      - TDs/TD5_performance.pdf
     
     untracked: false
     expire_in: 30 days
