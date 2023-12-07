@@ -65,7 +65,7 @@ Nous allons découpler le schéma numérique de l'`Equation` afin de pouvoir tes
 Il faudra donc maintenant créer une classe `Upwind` pour définir notre schéma décentré amont. Cette classe n'aura pas besoin de contenir de données, elle peut simplement avoir une méthode statique `update` qui prendrait en argument les variables `u_n` et `u_np1`, la vitesse d'advection et la discrétisation `IMesh`. La méthode `Equation::compute_for_scheme` sera template et prendra en argument template le type du schéma :
 
 ```c++
-m_equation.compute_for_scheme<Upwind>(t,mesh,u_n,u_np1);
+m_equation.compute_for_scheme<Upwind>(t,mesh,u_n,u_np1,a);
 ```
 
 ### 3.4.3 Ajout d'un schéma de Lax-Wendroff
