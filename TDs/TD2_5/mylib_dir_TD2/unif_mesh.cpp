@@ -45,3 +45,8 @@ int UniformMesh::x_size() const
 {
     return (final_position() - initial_position()) / position_step() + 1;
 };
+
+double UniformMesh::x_i(int i) const
+{
+    return initial_position() + i * position_step();
+};
