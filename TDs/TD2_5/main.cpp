@@ -8,7 +8,7 @@
 int main() 
 {
     Equation eq;
-    IMesh* mesh = new UniformMesh(0, 1, 0.5, 0, 5, 2);
+    IMesh* mesh = new UniformMesh(0, 1, 0.1, 0, 5, 0.5);
     
     Problem problem(eq, mesh);
     problem.solve();

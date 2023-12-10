@@ -20,6 +20,7 @@ public:
     virtual double position_step() const = 0;
 
     virtual int x_size() const = 0;
+    virtual double x_i(int i) const = 0;  
     
     virtual ~IMesh() = default;
 };
