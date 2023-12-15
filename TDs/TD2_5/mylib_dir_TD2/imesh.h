@@ -21,6 +21,8 @@ public:
 
     virtual int x_size() const = 0;
     virtual double x_i(int i) const = 0;  
+    virtual int t_size() const = 0;
+    virtual double t_n(int n) const = 0;
     
     virtual ~IMesh() = default;
 };

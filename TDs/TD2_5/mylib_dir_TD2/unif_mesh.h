@@ -25,6 +25,8 @@ public:
 
     int x_size() const override;
     double x_i(int i) const override;
+    int t_size() const override;
+    double t_n(int n) const override;
     // ~UniformMesh() = default;
 };
 

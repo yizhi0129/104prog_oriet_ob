@@ -1,7 +1,8 @@
 #include <iostream>
 #include "variable.h"
 
-Variable::Variable(IMesh* mesh){
+Variable::Variable(IMesh* mesh)
+{
     u_n = 0.0;
     u_np1 = 0.0;
     this->mesh_ = mesh;
@@ -10,6 +11,7 @@ Variable::Variable(IMesh* mesh){
     // std::cout << variable[0] << std::endl;
 }
 
-double& Variable::operator[](int i) {
+double& Variable::operator[](int i) 
+{
     return uvect[i];
 }

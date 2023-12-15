@@ -2,7 +2,10 @@
 #include "variable.h"
 #include <iostream>
 
-Problem::Problem(const Equation& eq, IMesh* mesh) : equation_(eq), mesh_(mesh) {}
+Problem::Problem(const Equation& eq, IMesh* mesh) : equation_(eq), mesh_(mesh) 
+{
+    
+}
 
 void Problem::solve() 
 {    

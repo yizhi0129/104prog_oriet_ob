@@ -50,3 +50,13 @@ double UniformMesh::x_i(int i) const
 {
     return initial_position() + i * position_step();
 };
+
+int UniformMesh::t_size() const
+{
+    return (final_time() - initial_time()) / time_step() + 1;
+};
+
+double UniformMesh::t_n(int n) const
+{
+    return initial_time() + n * time_step();
+};

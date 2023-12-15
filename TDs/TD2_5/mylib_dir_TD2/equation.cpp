@@ -28,3 +28,22 @@ void Equation::compute_initial_condition(Variable& var, IMesh* mesh)
         var[i] = value;
     }
 }
+
+void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t)
+{
+    double x_max = mesh->x_i(mesh->x_size());
+    double x_min = mesh->x_i(0);
+    double t_ini = mesh->initial_time();
+    double t_final = mesh->final_time();
+    double mu = (x_max - x_min) / 2.0;
+    double sigma = 10 * mesh->position_step();
+    double pi = 4 * atan(1.0);
+    double t = t_ini;
+    for (int n = 0; n <= mesh->t_size(); ++ n)
+    {
+        double t = mesh->t_n(n);
+        double x_i = mesh->x_i(i);
+        double a = 0.5;
+        double val_exa = exp(-pow((x_i - a * t)- mu, 2) / (2 * pow(sigma, 2))) / (sigma * sqrt(2 * pi)); 
+    }
+}
