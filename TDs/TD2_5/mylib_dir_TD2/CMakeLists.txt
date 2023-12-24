@@ -4,6 +4,7 @@ set(SOURCE_FILES
     problem.cpp
     variable.cpp
     upwind.cpp
+    laxwendroff.cpp
 )
 
 add_library(mylib_dir_TD2 ${SOURCE_FILES})

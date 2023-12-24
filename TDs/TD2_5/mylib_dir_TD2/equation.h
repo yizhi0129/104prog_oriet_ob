@@ -27,18 +27,26 @@ inline auto gaussian = [](double x, double mu, double sigma)
     return exp(-pow(x - mu, 2) / (2 * pow(sigma, 2))) / (sigma * sqrt(2 * pi));
 };
 
+template <typename T>
+void Equation::compute_initial_condition(Variable& var, IMesh* mesh, T calc_init_cond)
+{
+    double x_max = mesh->x_i(mesh->x_size());
+    double x_min = mesh->x_i(0);
+    double mu = (x_max - x_min) / 2.0;
+    double sigma = 10 * mesh->position_step(); 
+    for (int i = 0; i <= mesh->x_size(); ++ i)
+    {
+        double x_i = mesh->x_i(i);
+        var[i] = calc_init_cond(x_i, mu, sigma);
+    }
+}
 
-// class Upwind
-// {
-//     public:
-//         static void update(double &u_n, double &u_np1, double a, IMesh *mesh); 
-// };
+template <typename T>
+void Equation::compute_for_scheme(T scheme, double time, IMesh* mesh, double &u_n, double &u_np1, double a)
+{
+    T::update(u_n, u_np1, a, mesh);
+}
 
-// class LaxWendroff
-// {
-//     public:
-//         static void update(double &u_n, double &u_np1, double a, IMesh *mesh);
-// };
 
 
 #endif
