@@ -40,7 +40,7 @@ void Equation::compute_initial_condition(Variable& var, IMesh* mesh, T calc_init
     double x_min = mesh->x_i(0);
     double mu = (x_max - x_min) / 2.0;
     double sigma = 10 * mesh->position_step(); 
-    for (int i = 0; i <= mesh->x_size(); ++ i)
+    for (int i = 0; i < mesh->x_size(); ++ i)
     {
         double x_i = mesh->x_i(i);
         var[i] = calc_init_cond(x_i, mu, sigma);
@@ -89,7 +89,7 @@ void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T ca
     double sigma = 10 * mesh->position_step();
     double CFL = 0.5;
     double a = CFL * mesh->position_step() / mesh->time_step();
-    for (int i = 0; i <= mesh->x_size(); ++ i)
+    for (int i = 0; i < mesh->x_size(); ++ i)
     {
         double x_i = mesh->x_i(i);
         double x = x_i - a * t;

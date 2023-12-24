@@ -20,7 +20,7 @@ class Variable
         double u_n;
         double u_np1;
         double u_ref;
-        std::vector<double> uvect;
+        std::vector<double> u_vector;
         IMesh* mesh_;
         std::string m_name;
 };
