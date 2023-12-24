@@ -24,3 +24,5 @@ target_include_directories(Main.exe PRIVATE chps2023/TDs/TD2_5)
 enable_testing()
 
 add_test(Test.cpp Main.exe)
+
+# gtest_discover_tests(Test.exe)

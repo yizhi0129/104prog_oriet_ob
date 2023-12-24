@@ -1,6 +1,7 @@
 #include <iostream>
 #include "variable.h"
 
+
 Variable::Variable(IMesh* mesh)
 {
     u_n = 0.0;
