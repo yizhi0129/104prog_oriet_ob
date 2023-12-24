@@ -3,6 +3,7 @@
 
 #include "imesh.h"
 #include <vector>
+#include <string>
 
 class Variable
 {
@@ -10,12 +11,18 @@ class Variable
         Variable(IMesh* mesh);
         double& operator[](int i);
         ~Variable() = default;
-        double u_n;
-        double u_np1;
+        void print();
+        Variable() : m_name(""), u_np1(0.0) {};
+        Variable(const std::string& name) : m_name(name), u_np1(0.0) {};
+        std::string getName() const { return m_name; }
 
     private : 
+        double u_n;
+        double u_np1;
+        double u_ref;
         std::vector<double> uvect;
         IMesh* mesh_;
+        std::string m_name;
 };
 
 #endif

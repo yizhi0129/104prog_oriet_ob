@@ -7,4 +7,6 @@ void Upwind::update(double &u_n, double &u_np1, double a, IMesh *mesh)
     double u_nim1 = *(&u_n - 1);
     u_np1 = u_n - CFL * (u_n - u_nim1); 
     u_n = u_np1;
+    std::cout << "-----------upwind-----------" << std::endl;
+    std::cout << "u_n: " << u_n << " u_np1: " << u_np1 << std::endl;
 }
