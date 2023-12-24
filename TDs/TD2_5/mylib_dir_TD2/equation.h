@@ -21,6 +21,8 @@ class Equation
 };
 
 
+
+// it's quite ugly to define the following functions in the header file, but it's the only way I found to make it work
 inline auto gaussian = [](double x, double mu, double sigma)
 {
     double pi = 4 * atan(1.0);
