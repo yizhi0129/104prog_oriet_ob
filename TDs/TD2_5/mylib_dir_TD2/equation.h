@@ -40,11 +40,11 @@ void Equation::compute_initial_condition(Variable& var, IMesh* mesh, T calc_init
     double x_min = mesh->x_i(0);
     double mu = (x_max - x_min) / 2.0;
     double sigma = 10 * mesh->position_step(); 
-    for (int i = 0; i < mesh->x_size(); ++ i)
+    for (int n = 0; n < mesh->x_size(); ++ n)
     {
-        double x_i = mesh->x_i(i);
-        var[i] = calc_init_cond(x_i, mu, sigma);
-        std::cout << "x_i: " << x_i << " u_n: " << var[i] << std::endl;
+        double x_i = mesh->x_i(n);
+        var[n] = calc_init_cond(x_i, mu, sigma);
+        std::cout << "x_i: " << x_i << " u_n: " << var[n] << std::endl;
     }
 }
 
@@ -64,13 +64,13 @@ void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T ca
     double sigma = 10 * mesh->position_step();
     double CFL = 0.5;
     double a = CFL * mesh->position_step() / mesh->time_step();
-    for (int i = 0; i < mesh->x_size(); ++ i)
+    for (int n = 0; n < mesh->x_size(); ++ n)
     {
-        double &u_ref = var(i);
-        double x_i = mesh->x_i(i);
+        double &u_ref = var(n);
+        double x_i = mesh->x_i(n);
         double x = x_i - a * t;
-        var(i) = calc_exact_sol(x, mu, sigma);
-        std::cout << "x_i: " << x_i << " u_ref: " << u_ref << std::endl;
+        var(n) = calc_exact_sol(x, mu, sigma);
+        //std::cout << "x_i: " << x_i << " u_ref: " << u_ref << std::endl;
     }
 }
 

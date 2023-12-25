@@ -26,8 +26,8 @@ double& Variable::operator()(int i)
 
 void Variable::print()
 {
-    for (int i = 0; i <= mesh_->x_size(); ++ i)
+    for (int i = 0; i < mesh_->x_size(); ++ i)
     {
-        std::cout << m_name << " u_np1: " << u_vector[i] << " u_ref: " << u_ref_vector[i] << std::endl;
+        std::cout << m_name << " u_np1: " << u_vector[i] << "u_np1_2nd_order:" << u_2nd_vector[i] << " u_ref: " << u_ref_vector[i] << std::endl;
     }
 }

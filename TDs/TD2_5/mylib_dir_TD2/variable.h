@@ -20,9 +20,12 @@ class Variable
     private : 
         double u_n;
         double u_np1;
+        double u_n_2nd_order;
+        double u_np1_2nd_order;
         double u_ref;
         std::vector<double> u_vector;
         std::vector<double> u_ref_vector;
+        std::vector<double> u_2nd_vector;
         IMesh* mesh_;
         std::string m_name;
 };

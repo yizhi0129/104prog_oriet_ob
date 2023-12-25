@@ -1,12 +1,10 @@
 #include "laxwendroff.h"
 
-void LaxWendroff::update(double &u_n, double &u_np1, double a, IMesh *mesh)
+void LaxWendroff::update(double &u1, double &u2, double a, IMesh *mesh)
 {
      double CFL = 0.5;
-     double u_nim1 = *(&u_n - 1);
-     double u_nip1 = *(&u_n + 1);
-     u_np1 = u_n - CFL * (u_nip1 - u_nim1) / 2.0 + pow(CFL, 2) * (u_nip1 - 2 * u_n + u_nim1) / 2.0; 
-     u_n = u_np1;
-     std::cout << "-----------laxwendroff-----------" << std::endl;
-     std::cout << "u_n: " << u_n << " u_np1: " << u_np1 << std::endl;
+     double u_im1 = ;
+     double u_ip1 = ;
+     u2 = u1 - CFL * (u_ip1 - u_im1) / 2.0 + pow(CFL, 2) * (u_ip1 - 2 * u1 + u_im1) / 2.0; 
+     u1 = u2;
 };
