@@ -10,6 +10,7 @@ class Variable
     public:
         Variable(IMesh* mesh);
         double& operator[](int i);
+        double& operator()(int i);
         ~Variable() = default;
         void print();
         Variable() : m_name(""), u_np1(0.0) {};
@@ -21,6 +22,7 @@ class Variable
         double u_np1;
         double u_ref;
         std::vector<double> u_vector;
+        std::vector<double> u_ref_vector;
         IMesh* mesh_;
         std::string m_name;
 };

@@ -10,6 +10,15 @@ void Problem::solve()
 {    
     Variable variable = Variable(mesh_);
 
+    std::cout << "--- exact solution ---" << std::endl;
+    for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+    {
+        std::cout << "--- time: " << time << " ---" << std::endl;    
+        equation_.compute_exact_solution(variable, mesh_, time, gaussian);  
+    }
+    variable.print();
+
+
     std::cout << "--- Initial condition ---" << std::endl;
     equation_.compute_initial_condition(variable, mesh_, gaussian);
     
@@ -34,21 +43,7 @@ void Problem::solve()
     }
     variable.print();
 
-    std::cout << "--- exact solution ---" << std::endl;
 
-    equation_.compute_initial_condition(variable, mesh_, gaussian);
-    
-    double i = 0;   
-    for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
-    {
-        double &u_n = variable[i];
-        double u_np1 = 0.0;
-        equation_.compute_exact_solution(variable, mesh_, mesh_->final_time(), gaussian);
-        //std::cout << "u_n: " << u_n << " u_np1: " << u_np1 << std::endl;
-        ++ i;
-    }
-
-    variable.print();
 }
 
 
