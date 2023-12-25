@@ -12,22 +12,20 @@ class Equation
         template <typename T>
         void compute_initial_condition(Variable &var, IMesh *mesh, T calc_init_cond);
         
-        void compute(double time, double position, double &u_n, double &u_np1, IMesh *mesh);
+        void compute(double time, double position, std::vector<double> u_n, std::vector<double>u_np1, IMesh *mesh);
         
         template <typename T>
         void compute_exact_solution(Variable &var, IMesh *mesh, double t, T calc_exact_sol);
         
         template <typename T>
-        void compute_for_scheme(T scheme, double time, IMesh *mesh, double &u_n, double &u_np1, double a);
+        void compute_for_scheme(T scheme, double time, IMesh *mesh, std::vector<double>u_n, std::vector<double>u_np1, double a);
 };
-
-
 
 // it's quite ugly to define the following functions in the header file, but it's the only way I found to make it work
 // I tried to define them in equation.cpp, but then I got a linker error
 // Why can we define functions in .h files?
 
-inline auto gaussian = [](double x, double mu, double sigma)
+auto gaussian = [](double x, double mu, double sigma) -> double
 {
     double pi = 4 * atan(1.0);
     return exp(-pow(x - mu, 2) / (2 * pow(sigma, 2))) / (sigma * sqrt(2 * pi));
@@ -49,11 +47,10 @@ void Equation::compute_initial_condition(Variable& var, IMesh* mesh, T calc_init
 }
 
 template <typename T>
-void Equation::compute_for_scheme(T scheme, double time, IMesh* mesh, double &u_n, double &u_np1, double a)
+void Equation::compute_for_scheme(T scheme, double time, IMesh* mesh, std::vector<double> u_n, std::vector<double> u_np1, double a)
 {
     T::update(u_n, u_np1, a, mesh);
 }
-
 
 template <typename T>
 void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T calc_exact_sol)
@@ -66,11 +63,11 @@ void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T ca
     double a = CFL * mesh->position_step() / mesh->time_step();
     for (int n = 0; n < mesh->x_size(); ++ n)
     {
-        double &u_ref = var(n);
+        std::vector<double> u_ref(mesh->x_size());
+        u_ref[n] = var[n];
         double x_i = mesh->x_i(n);
         double x = x_i - a * t;
-        var(n) = calc_exact_sol(x, mu, sigma);
-        //std::cout << "x_i: " << x_i << " u_ref: " << u_ref << std::endl;
+        var[n] = calc_exact_sol(x, mu, sigma);
     }
 }
 

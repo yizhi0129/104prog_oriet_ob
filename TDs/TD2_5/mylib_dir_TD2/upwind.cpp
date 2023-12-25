@@ -1,10 +1,11 @@
-#include <iostream>
 #include "upwind.h"
 
-void Upwind::update(double &u1, double &u2, double a, IMesh *mesh)
+void Upwind::update(std::vector<double> u_n, std::vector<double> u_np1, double a, IMesh *mesh)
 {
     double CFL = 0.5;
-    double u_im1 = ;
-    u2 = u1 - CFL * (u1 - u_im1); 
-    u1 = u2;
+    for (int i = 1; i < mesh->t_size(); i ++)
+    {
+        u_np1[i] = u_n[i] - CFL * (u_n[i] - u_n[i - 1]); 
+        u_n = u_np1;
+    }    
 }
