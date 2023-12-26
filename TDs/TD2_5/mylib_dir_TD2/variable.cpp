@@ -14,8 +14,10 @@ double& Variable::operator[](int i)
 }
 
 
-void Variable::print() const {
-    std::for_each(u_vector.begin(), u_vector.end(), [](const double& val) {
-        std::cout << val << std::endl;
+void Variable::print(std::ostream& os) const 
+{
+    std::for_each(u_vector.begin(), u_vector.end(), [&os](const double& val) 
+    {
+        os << val << std::endl;
     });
 }

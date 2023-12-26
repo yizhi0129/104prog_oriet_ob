@@ -31,13 +31,34 @@ void Problem::solve()
     u_np1_2nd_order = u_n_2nd_order;
     equation_.compute_initial_condition(u_ref, mesh_, gaussian);
 
+    std::ofstream initFile("init.dat");
+    if (!initFile.is_open()) 
+    {
+        std::cerr << "Error opening the file!" << std::endl;
+    }
+    else
+    {
+        u_n.print(initFile);
+    }
+    initFile.close();
+    
 
     //std::cout << "--- exact solution ---" << std::endl;
     for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
     {   
         equation_.compute_exact_solution(u_ref, mesh_, time, gaussian);  
     }
-
+    
+    std::ofstream exaFile("ref.dat");
+    if (!exaFile.is_open()) 
+    {
+        std::cerr << "Error opening the file!" << std::endl;
+    }
+    else
+    {
+        u_ref.print(exaFile);
+    }
+    exaFile.close();
       
     //std::cout << "--- Solve problem ---" << std::endl;
     
@@ -73,6 +94,16 @@ void Problem::solve()
         }
     }
     
+    std::ofstream uwFile("uw.dat");
+    if (!uwFile.is_open()) 
+    {
+        std::cerr << "Error opening the file!" << std::endl;
+    }
+    else
+    {
+        u_np1.print(uwFile);
+    }
+    uwFile.close();
 
     //std::cout << "--- laxwendroff ---" << std::endl;
     
@@ -90,6 +121,17 @@ void Problem::solve()
         }
     }
 
+    std::ofstream lwdFile("lwd.dat");
+    if (!lwdFile.is_open()) 
+    {
+        std::cerr << "Error opening the file!" << std::endl;
+    }
+    else
+    {
+        u_np1_2nd_order.print(lwdFile);
+    }
+    lwdFile.close();
+    
     timer.stop();
     timer.print("reference time");
 }
@@ -113,6 +155,17 @@ void Problem::solve_parallel()
     u_np1_2nd_order = u_n_2nd_order;
     equation_.compute_initial_condition(u_ref, mesh_, gaussian);
 
+    std::ofstream initFile("init.dat");
+    if (!initFile.is_open()) 
+    {
+        std::cerr << "Error opening the file!" << std::endl;
+    }
+    else
+    {
+        u_n.print(initFile);
+    }
+    initFile.close();
+
     std::thread first_thread([&]()
     {
         //std::cout << "--- exact solution ---" << std::endl;
@@ -120,6 +173,16 @@ void Problem::solve_parallel()
         {   
             equation_.compute_exact_solution(u_ref, mesh_, time, gaussian);  
         } 
+        std::ofstream exaFile("ref.dat");
+        if (!exaFile.is_open()) 
+        {
+            std::cerr << "Error opening the file!" << std::endl;
+        }
+        else
+        {
+            u_ref.print(exaFile);
+        }
+        exaFile.close();
     });
       
 
@@ -142,6 +205,16 @@ void Problem::solve_parallel()
                 n ++;
             }
         }
+        std::ofstream uwFile("uw.dat");
+        if (!uwFile.is_open()) 
+        {
+            std::cerr << "Error opening the file!" << std::endl;
+        }
+        else
+        {
+            u_np1.print(uwFile);
+        }
+        uwFile.close();
     });
    
 
@@ -160,6 +233,16 @@ void Problem::solve_parallel()
                 n ++;
             }
         }
+        std::ofstream lwdFile("lwd.dat");
+        if (!lwdFile.is_open()) 
+        {
+            std::cerr << "Error opening the file!" << std::endl;
+        }
+        else
+        {
+            u_np1_2nd_order.print(lwdFile);
+        }
+        lwdFile.close();
     });
 
     first_thread.join();
@@ -188,13 +271,34 @@ void Problem::solve_async()
     u_np1_2nd_order = u_n_2nd_order;
     equation_.compute_initial_condition(u_ref, mesh_, gaussian);
 
+    std::ofstream initFile("init.dat");
+    if (!initFile.is_open()) 
+    {
+        std::cerr << "Error opening the file!" << std::endl;
+    }
+    else
+    {
+        u_n.print(initFile);
+    }
+    initFile.close();
+
     std::future first_task = std::async(std::launch::async,[&]()
     {
         //std::cout << "--- exact solution ---" << std::endl;
         for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
         {   
             equation_.compute_exact_solution(u_ref, mesh_, time, gaussian);  
-        } 
+        }           
+        std::ofstream exaFile("ref.dat");
+        if (!exaFile.is_open()) 
+        {
+            std::cerr << "Error opening the file!" << std::endl;
+        }
+        else
+        {
+            u_ref.print(exaFile);
+        }
+        exaFile.close(); 
     });
       
 
@@ -213,10 +317,20 @@ void Problem::solve_async()
             {
                 equation_.compute_for_scheme(Upwind(), time, mesh_, u_n, u_np1, 0.5);
                 u_n[n] = u_np1[n];
-                std::cout << u_np1[n] << std::endl;
+                //std::cout << u_np1[n] << std::endl;
                 n ++;
             }
         }
+        std::ofstream uwFile("uw.dat");
+        if (!uwFile.is_open()) 
+        {
+            std::cerr << "Error opening the file!" << std::endl;
+        }
+        else
+        {
+            u_np1.print(uwFile);
+        }
+        uwFile.close();
     });
    
 
@@ -235,6 +349,16 @@ void Problem::solve_async()
                 n ++;
             }
         }
+        std::ofstream lwdFile("lwd.dat");
+        if (!lwdFile.is_open()) 
+        {
+            std::cerr << "Error opening the file!" << std::endl;
+        }
+        else
+        {
+            u_np1_2nd_order.print(lwdFile);
+        }
+        lwdFile.close();
     });
 
     first_task.wait();
