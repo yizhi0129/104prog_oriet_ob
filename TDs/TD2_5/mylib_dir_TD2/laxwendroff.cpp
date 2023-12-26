@@ -1,7 +1,7 @@
 #include "laxwendroff.h"
 
 
-void LaxWendroff::update(std::vector<double> u_n_2nd_order, std::vector<double> u_np1_2nd_order, double a, IMesh *mesh)
+void LaxWendroff::update(Variable& u_n_2nd_order, Variable& u_np1_2nd_order, double a, IMesh *mesh)
 {
      double CFL = 0.5;
      double c = CFL / 2.0;

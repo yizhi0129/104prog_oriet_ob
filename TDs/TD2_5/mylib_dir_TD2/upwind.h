@@ -4,5 +4,5 @@
 class Upwind
 {
     public:
-        static void update(std::vector<double> u_n, std::vector<double> u_np1, double a, IMesh *mesh); 
+        static void update(Variable& u_n, Variable& u_np1, double a, IMesh *mesh); 
 };

@@ -12,13 +12,13 @@ class Equation
         template <typename T>
         void compute_initial_condition(Variable &var, IMesh *mesh, T calc_init_cond);
         
-        void compute(double time, double position, std::vector<double> u_n, std::vector<double>u_np1, IMesh *mesh);
+        void compute(double time, double position, Variable& u_n, Variable& u_np1, IMesh *mesh);
         
         template <typename T>
         void compute_exact_solution(Variable &var, IMesh *mesh, double t, T calc_exact_sol);
         
         template <typename T>
-        void compute_for_scheme(T scheme, double time, IMesh *mesh, std::vector<double>u_n, std::vector<double>u_np1, double a);
+        void compute_for_scheme(T scheme, double time, IMesh *mesh, Variable& u_n, Variable& u_np1, double a);
 };
 
 // it's quite ugly to define the following functions in the header file, but it's the only way I found to make it work
@@ -42,12 +42,13 @@ void Equation::compute_initial_condition(Variable& var, IMesh* mesh, T calc_init
     {
         double x_i = mesh->x_i(n);
         var[n] = calc_init_cond(x_i, mu, sigma);
-        std::cout << "x_i: " << x_i << " u_n: " << var[n] << std::endl;
+        
+        //std::cout << "x_i: " << x_i << " u_n: " << var[n] << std::endl;
     }
 }
 
 template <typename T>
-void Equation::compute_for_scheme(T scheme, double time, IMesh* mesh, std::vector<double> u_n, std::vector<double> u_np1, double a)
+void Equation::compute_for_scheme(T scheme, double time, IMesh* mesh, Variable& u_n, Variable& u_np1, double a)
 {
     T::update(u_n, u_np1, a, mesh);
 }
@@ -63,11 +64,10 @@ void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T ca
     double a = CFL * mesh->position_step() / mesh->time_step();
     for (int n = 0; n < mesh->x_size(); ++ n)
     {
-        std::vector<double> u_ref(mesh->x_size());
-        u_ref[n] = var[n];
         double x_i = mesh->x_i(n);
         double x = x_i - a * t;
         var[n] = calc_exact_sol(x, mu, sigma);
+        //std::cout << "x_i: " << x_i << " u_ref: " << var[n] << std::endl;
     }
 }
 

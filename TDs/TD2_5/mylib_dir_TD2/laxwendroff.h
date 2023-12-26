@@ -4,5 +4,5 @@
 class LaxWendroff
 {
      public:
-        static void update(std::vector<double> u_n_2nd_order, std::vector<double> u_np1_2nd_order, double a, IMesh *mesh);
+        static void update(Variable& u_n_2nd_order, Variable& u_np1_2nd_order, double a, IMesh *mesh);
 };
