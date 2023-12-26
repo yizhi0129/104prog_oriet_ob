@@ -3,6 +3,12 @@
 
 #include "imesh.h"
 #include "equation.h"
+#include <algorithm>
+#include <stdexcept>
+#include "timer.h"
+#include <thread>
+#include <execution>
+#include <future>
 
 
 class Problem 
@@ -10,6 +16,8 @@ class Problem
 public:
     Problem(const Equation& eq, IMesh* mesh);
     void solve();
+    void solve_parallel();
+    void solve_async();
     ~Problem() = default; 
 private:
     Equation equation_;

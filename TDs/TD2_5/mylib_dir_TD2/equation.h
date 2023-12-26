@@ -62,7 +62,7 @@ void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T ca
 {
     if (mesh == nullptr) 
     {
-        throw std::invalid_argument("IMesh pointer is nullptr");
+        throw std::invalid_argument("error: nullptr");
     }
     double x_max = mesh->x_i(mesh->x_size());
     double x_min = mesh->x_i(0);  

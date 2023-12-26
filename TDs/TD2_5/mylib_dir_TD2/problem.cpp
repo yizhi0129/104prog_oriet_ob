@@ -3,8 +3,7 @@
 #include "upwind.h"
 #include "laxwendroff.h"
 #include <iostream>
-#include <stdexcept>
-#include "timer.h"
+
 
 Problem::Problem(const Equation& eq, IMesh* mesh) : equation_(eq), mesh_(mesh) 
 {
@@ -25,30 +24,22 @@ void Problem::solve()
     Variable u_np1_2nd_order = Variable(mesh_);
     Variable u_ref = Variable(mesh_);
     
-    std::cout << "--- Initial condition ---" << std::endl;
+    //std::cout << "--- Initial condition ---" << std::endl;
     equation_.compute_initial_condition(u_n, mesh_, gaussian);
     u_np1 = u_n;
-    u_n.print();
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
-    //u_np1.print();
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
     equation_.compute_initial_condition(u_n_2nd_order, mesh_, gaussian);
     u_np1_2nd_order = u_n_2nd_order;
-    //u_n_2nd_order.print();
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
-    //u_np1_2nd_order.print();
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
     equation_.compute_initial_condition(u_ref, mesh_, gaussian);
-    //u_ref.print();
 
-    std::cout << "--- exact solution ---" << std::endl;
+
+    //std::cout << "--- exact solution ---" << std::endl;
     for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
     {   
         equation_.compute_exact_solution(u_ref, mesh_, time, gaussian);  
     }
 
       
-    std::cout << "--- Solve problem ---" << std::endl;
+    //std::cout << "--- Solve problem ---" << std::endl;
     
     /*
     for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
@@ -67,29 +58,28 @@ void Problem::solve()
     }
     */
     
-    std::cout << "--- upwind ---" << std::endl;
+    //std::cout << "--- upwind ---" << std::endl;
     for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
     {
-        std::cout << "--- time: " << time << " ---" << std::endl;
-        double n = 0;
+        //std::cout << "--- time: " << time << " ---" << std::endl;
+        int n = 0;
         
         for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
         {
             equation_.compute_for_scheme(Upwind(), time, mesh_, u_n, u_np1, 0.5);
             u_n[n] = u_np1[n];
-            std::cout << u_np1[n] << std::endl;
-            n ++;
             //std::cout << u_np1[n] << std::endl;
+            n ++;
         }
     }
     
 
-    std::cout << "--- laxwendroff ---" << std::endl;
+    //std::cout << "--- laxwendroff ---" << std::endl;
     
     for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
     {
         //std::cout << "--- time: " << time << " ---" << std::endl;
-        double n = 0;
+        int n = 0;
         
         for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
         {
@@ -99,13 +89,158 @@ void Problem::solve()
             n ++;
         }
     }
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
-    u_np1.print();
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
-    u_np1_2nd_order.print();
-    //std::cout << "--- -------------------------------------------------- ---" << std::endl;
-    u_ref.print();
 
     timer.stop();
     timer.print("reference time");
+}
+
+
+void Problem::solve_parallel()
+{
+    Timer timer2;
+    timer2.start();
+
+    Variable u_n = Variable(mesh_);
+    Variable u_np1 = Variable(mesh_);
+    Variable u_n_2nd_order = Variable(mesh_);
+    Variable u_np1_2nd_order = Variable(mesh_);
+    Variable u_ref = Variable(mesh_);
+
+    //std::cout << "--- Initial condition ---" << std::endl;
+    equation_.compute_initial_condition(u_n, mesh_, gaussian);
+    u_np1 = u_n;
+    equation_.compute_initial_condition(u_n_2nd_order, mesh_, gaussian);
+    u_np1_2nd_order = u_n_2nd_order;
+    equation_.compute_initial_condition(u_ref, mesh_, gaussian);
+
+    std::thread first_thread([&]()
+    {
+        //std::cout << "--- exact solution ---" << std::endl;
+        for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+        {   
+            equation_.compute_exact_solution(u_ref, mesh_, time, gaussian);  
+        } 
+    });
+      
+
+
+    //std::cout << "--- Solve problem ---" << std::endl;
+
+    std::thread second_thread([&]()
+    {
+        //std::cout << "--- upwind ---" << std::endl;
+        for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+        {
+            //std::cout << "--- time: " << time << " ---" << std::endl;
+            int n = 0;
+        
+            for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
+            {
+                equation_.compute_for_scheme(Upwind(), time, mesh_, u_n, u_np1, 0.5);
+                u_n[n] = u_np1[n];
+                //std::cout << u_np1[n] << std::endl;
+                n ++;
+            }
+        }
+    });
+   
+
+    std::thread third_thread([&]()
+    {
+        //std::cout << "--- laxwendroff ---" << std::endl;
+    
+        for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+        {
+            int n = 0;
+        
+            for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
+            {
+                equation_.compute_for_scheme(LaxWendroff(), time, mesh_, u_n_2nd_order, u_np1_2nd_order, 0.5);
+                u_n_2nd_order[n] = u_np1_2nd_order[n];  
+                n ++;
+            }
+        }
+    });
+
+    first_thread.join();
+    second_thread.join();
+    third_thread.join();
+
+    timer2.stop();
+    timer2.print("treads time");
+}
+
+void Problem::solve_async()
+{
+    Timer timer3;
+    timer3.start();
+
+    Variable u_n = Variable(mesh_);
+    Variable u_np1 = Variable(mesh_);
+    Variable u_n_2nd_order = Variable(mesh_);
+    Variable u_np1_2nd_order = Variable(mesh_);
+    Variable u_ref = Variable(mesh_);
+
+    //std::cout << "--- Initial condition ---" << std::endl;
+    equation_.compute_initial_condition(u_n, mesh_, gaussian);
+    u_np1 = u_n;
+    equation_.compute_initial_condition(u_n_2nd_order, mesh_, gaussian);
+    u_np1_2nd_order = u_n_2nd_order;
+    equation_.compute_initial_condition(u_ref, mesh_, gaussian);
+
+    std::future first_task = std::async(std::launch::async,[&]()
+    {
+        //std::cout << "--- exact solution ---" << std::endl;
+        for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+        {   
+            equation_.compute_exact_solution(u_ref, mesh_, time, gaussian);  
+        } 
+    });
+      
+
+
+    //std::cout << "--- Solve problem ---" << std::endl;
+
+    std::future second_task = std::async(std::launch::async,[&]()
+    {
+        //std::cout << "--- upwind ---" << std::endl;
+        for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+        {
+            //std::cout << "--- time: " << time << " ---" << std::endl;
+            int n = 0;
+        
+            for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
+            {
+                equation_.compute_for_scheme(Upwind(), time, mesh_, u_n, u_np1, 0.5);
+                u_n[n] = u_np1[n];
+                std::cout << u_np1[n] << std::endl;
+                n ++;
+            }
+        }
+    });
+   
+
+    std::future third_task = std::async(std::launch::async,[&]()
+    {
+        //std::cout << "--- laxwendroff ---" << std::endl;
+    
+        for (double time = mesh_->initial_time(); time < mesh_->final_time(); time += mesh_->time_step()) 
+        {
+            int n = 0;
+        
+            for (double position = mesh_->initial_position(); position < mesh_->final_position(); position += mesh_->position_step()) 
+            {
+                equation_.compute_for_scheme(LaxWendroff(), time, mesh_, u_n_2nd_order, u_np1_2nd_order, 0.5);
+                u_n_2nd_order[n] = u_np1_2nd_order[n];  
+                n ++;
+            }
+        }
+    });
+
+    first_task.wait();
+    second_task.wait();
+    third_task.wait();
+
+    timer3.stop();
+    timer3.print("async time");
 }

@@ -1,5 +1,0 @@
-if(EXISTS "/Users/yangyizhi/chps2023/TDs/TD2_5/b3/Test.exe[1]_tests.cmake")
-  include("/Users/yangyizhi/chps2023/TDs/TD2_5/b3/Test.exe[1]_tests.cmake")
-else()
-  add_test(Test.exe_NOT_BUILT Test.exe_NOT_BUILT)
-endif()

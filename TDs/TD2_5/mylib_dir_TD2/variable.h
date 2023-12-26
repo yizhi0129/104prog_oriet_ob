@@ -10,7 +10,7 @@ class Variable
     public:
         Variable(IMesh* mesh);
         double& operator[](int i); 
-        void print();
+        void print() const;
         Variable() : m_name("") {};
         Variable(const std::string& name) : m_name(name) {};
         std::string getName() const { return m_name; }

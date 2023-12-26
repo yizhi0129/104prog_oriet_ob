@@ -14,10 +14,8 @@ double& Variable::operator[](int i)
 }
 
 
-void Variable::print()
-{
-    for (int i = 0; i < mesh_->x_size(); ++ i)
-    {
-        std::cout << m_name << " " << u_vector[i] << std::endl;
-    }
+void Variable::print() const {
+    std::for_each(u_vector.begin(), u_vector.end(), [](const double& val) {
+        std::cout << val << std::endl;
+    });
 }
