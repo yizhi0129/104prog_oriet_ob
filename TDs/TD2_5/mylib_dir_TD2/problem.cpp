@@ -3,11 +3,22 @@
 #include "upwind.h"
 #include "laxwendroff.h"
 #include <iostream>
+#include <stdexcept>
+#include "timer.h"
 
-Problem::Problem(const Equation& eq, IMesh* mesh) : equation_(eq), mesh_(mesh) {}
+Problem::Problem(const Equation& eq, IMesh* mesh) : equation_(eq), mesh_(mesh) 
+{
+    if (mesh == nullptr) 
+    {
+        throw std::invalid_argument("error: nullptr");
+    }
+}
 
 void Problem::solve() 
-{    
+{   
+    Timer timer;
+    timer.start();
+
     Variable u_n = Variable(mesh_);
     Variable u_np1 = Variable(mesh_);
     Variable u_n_2nd_order = Variable(mesh_);
@@ -94,4 +105,7 @@ void Problem::solve()
     u_np1_2nd_order.print();
     //std::cout << "--- -------------------------------------------------- ---" << std::endl;
     u_ref.print();
+
+    timer.stop();
+    timer.print("reference time");
 }

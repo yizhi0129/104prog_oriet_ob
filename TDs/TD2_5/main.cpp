@@ -8,6 +8,7 @@ int main()
 {
     Equation eq;
     IMesh* mesh = new UniformMesh(0, 2, 0.1, 0, 10, 0.1);
+    //IMesh* mesh = new UniformMesh(0, 10, 0.1, 0, 10, 1e-6);
     Problem problem(eq, mesh);
     problem.solve();
     delete mesh; 

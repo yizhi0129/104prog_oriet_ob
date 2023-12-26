@@ -3,6 +3,10 @@
 
 void Equation::compute(double time, double position, Variable& u_n, Variable& u_np1, IMesh *mesh)
 {
+    if (mesh == nullptr) 
+    {
+        throw std::invalid_argument("error: nullptr");
+    }
     // std::cout << "Computing equation at time: " << time << " -- at x_i = " << position << std::endl;
     double CFL = 0.5;
     u_np1[0] = u_n[0] - CFL * u_n[0];

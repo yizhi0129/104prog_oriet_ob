@@ -34,6 +34,10 @@ auto gaussian = [](double x, double mu, double sigma) -> double
 template <typename T>
 void Equation::compute_initial_condition(Variable& var, IMesh* mesh, T calc_init_cond)
 {
+    if (mesh == nullptr) 
+    {
+        throw std::invalid_argument("IMesh pointer is nullptr");
+    }
     double x_max = mesh->x_i(mesh->x_size());
     double x_min = mesh->x_i(0);
     double mu = (x_max - x_min) / 2.0;
@@ -56,6 +60,10 @@ void Equation::compute_for_scheme(T scheme, double time, IMesh* mesh, Variable& 
 template <typename T>
 void Equation::compute_exact_solution(Variable& var, IMesh* mesh, double t, T calc_exact_sol)
 {
+    if (mesh == nullptr) 
+    {
+        throw std::invalid_argument("IMesh pointer is nullptr");
+    }
     double x_max = mesh->x_i(mesh->x_size());
     double x_min = mesh->x_i(0);  
     double mu = (x_max - x_min) / 2.0;

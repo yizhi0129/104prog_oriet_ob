@@ -48,12 +48,15 @@ TEST(UnitaryTest, MeshTest)
 
 TEST(UnitaryTest,ProblemTest)
 {
-  // construction et test d'une instance de Problem
+    IMesh* mesh = nullptr;
+    Equation eq;
+    ASSERT_THROW({Problem problem(eq, mesh), std::invalid_argument;});
 }
 
 TEST(MainFunctionTest,EquationTest)
 {
-  // construction et test d'une instance de Equation
+    IMesh* mesh = nullptr;
+    ASSERT_THROW(Equation eq(mesh), std::invalid_argument);
 }
 
 int main(int argc, char **argv)

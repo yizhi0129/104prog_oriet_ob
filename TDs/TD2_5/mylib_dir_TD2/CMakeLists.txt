@@ -5,6 +5,7 @@ set(SOURCE_FILES
     variable.cpp
     upwind.cpp
     laxwendroff.cpp
+    timer.cpp
 )
 
 add_library(mylib_dir_TD2 ${SOURCE_FILES})
